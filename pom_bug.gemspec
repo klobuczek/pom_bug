@@ -10,6 +10,6 @@ Gem::Specification.new do |s|
   s.specification_version = 4
 
   s.add_runtime_dependency(%q<jar-dependencies>, [">= 0"])
-  # s.add_development_dependency(%q<ruby-maven>, [">= 0"])
+  s.add_development_dependency(%q<ruby-maven>, [">= 0"])
   # s.add_development_dependency(%q<rdoc>, [">= 4.0", "< 7"])
 end
