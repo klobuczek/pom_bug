@@ -1,0 +1,22 @@
+name: Specs
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: [ jruby-9.1.17.0. jruby-9.2.20.1, jruby-9.3.3.0 ]
+        driver: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
